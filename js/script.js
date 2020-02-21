@@ -21,6 +21,7 @@ function createResultsGames(json) {
     results.forEach(function (result) {
 
         let divClass = document.createElement("div");
+        
         divClass.className = "col-sm-6 col-md-4 col-lg-3";
 
         let type = "unknown";

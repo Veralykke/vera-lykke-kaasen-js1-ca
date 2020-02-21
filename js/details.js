@@ -1,7 +1,7 @@
 const queryString = document.location.search;
-/*console.log(queryString);*/
+console.log(queryString);
 const params = new URLSearchParams(queryString);
-/* console.dir(params); */
+console.dir(params); 
 
 let characterId = "";
 
@@ -54,3 +54,7 @@ let pageTitle = document.querySelector("title")
 pageTitle.innerHTML= json.name;
 
     }
+
+
+
+    ////NB SETTE INN ERROR HER??/////////
