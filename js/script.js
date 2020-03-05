@@ -14,7 +14,7 @@ fetch(gamesUrl)
     });
 
 function createResultsGames(json) {
-    const results = json.results;
+    const characters = json.results; // variable name could be some nicer name like characters, then when you call its properties is reads better
 
     const resultCardContainer = document.querySelector(".results");
 
@@ -26,17 +26,17 @@ function createResultsGames(json) {
 
         let type = "unknown";
 
-        if (result.type != "" && result.type != undefined) {
+        if (result.type !== "" && result.type !== undefined) { // always use strict equality operators when doing checks so that you do not fall victim to type coercion: https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
             type = result.type;
         }
         let html =
             ` <div class = "card">
-                <img class = "image"src = "${result.image}"alt = "${result.name}">
+                <img class = "image"src = "${characters.image}"alt = "${characters.name}">
                 <div class = "details">
-                <h4 class = "name"> ${result.name}</h4>
+                <h4 class = "name"> ${characters.name}</h4>
                 <p>Type: ${type}</p>
-                <p>${result.episode.length}</p>                                  
-                    <a class="btn btn-primary" href="details.html?id=${result.id}">Details</a>
+                <p>${characters.episode.length}</p>                                  
+                    <a class="btn btn-primary" href="details.html?id=${characters.id}">Details</a>
                 </div> 
             </div> 
         </div>`;
