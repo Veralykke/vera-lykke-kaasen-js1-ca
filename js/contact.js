@@ -58,7 +58,13 @@ function validateForm(event) {
 }
 
 function checkInputLength(value) {
-    return value.trim().length > 0; // all those lines can be written as a one liner too.
+    const trimmedValue = value.trim();
+
+    if (trimmedValue.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function validateEmail(email) {

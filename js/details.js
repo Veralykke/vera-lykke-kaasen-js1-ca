@@ -30,8 +30,6 @@ fetch (characterUrl)
 
     function createResultCharacter(json) {
         console.log(json);
-        
-    const character = json; // variable name could be some nicer name like character, then when you call its properties is reads better
     
 
     const resultCardContainer = document.querySelector(".results")
@@ -39,13 +37,13 @@ fetch (characterUrl)
        
 
         let html = ` <div class="detail-container">
-        <img class="details-image" src=${character.image} alt="Character Name" />
+        <img class="details-image" src=${json.image} alt="Character Name" />
         <div class="detail-details">
-            <h1>${character.name}</h1>
-            <p>Status: <span class="value" id="status">${character.status}e</span></p>
-            <p>Species: <span class="value" id="species">${character.species}</span></p>
-            <p>Origin: <span class="value" id="origin">${character.origin.name}</span></p>
-            <p>Location: <span class="value" id="location">${character.location.name}</span></p>                   
+            <h1>${json.name}</h1>
+            <p>Status: <span class="value" id="status">${json.status}e</span></p>
+            <p>Species: <span class="value" id="species">${json.species}</span></p>
+            <p>Origin: <span class="value" id="origin">${json.origin.name}</span></p>
+            <p>Location: <span class="value" id="location">${json.location.name}</span></p>                   
         </div>
     </div>`
     
