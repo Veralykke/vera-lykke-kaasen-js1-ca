@@ -18,7 +18,7 @@ function createResultsGames(json) {
 
     const resultCardContainer = document.querySelector(".results");
 
-    results.forEach(function (result) {
+    characters.forEach(function (character) {
 
         let divClass = document.createElement("div");
         
@@ -26,17 +26,17 @@ function createResultsGames(json) {
 
         let type = "unknown";
 
-        if (result.type !== "" && result.type !== undefined) { // always use strict equality operators when doing checks so that you do not fall victim to type coercion: https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
-            type = result.type;
+        if (character.type !== "" && character.type !== undefined) { // always use strict equality operators when doing checks so that you do not fall victim to type coercion: https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
+            type = character.type;
         }
         let html =
             ` <div class = "card">
-                <img class = "image"src = "${characters.image}"alt = "${characters.name}">
+                <img class = "image"src = "${character.image}"alt = "${character.name}">
                 <div class = "details">
-                <h4 class = "name"> ${characters.name}</h4>
+                <h4 class = "name"> ${character.name}</h4>
                 <p>Type: ${type}</p>
-                <p>${characters.episode.length}</p>                                  
-                    <a class="btn btn-primary" href="details.html?id=${characters.id}">Details</a>
+                <p>${character.episode.length}</p>                                  
+                    <a class="btn btn-primary" href="details.html?id=${character.id}">Details</a>
                 </div> 
             </div> 
         </div>`;
